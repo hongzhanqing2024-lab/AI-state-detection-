@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "AI 状态可视化",
+  "version": "1.4",
+  "description": "监控 AI 思考、输出与完成状态",
+  "permissions": ["activeTab"],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.chatgpt.com/*", 
+        "*://chat.deepseek.com/*",
+        "*://gemini.google.com/*"
+      ],
+      "js": ["content.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["thinking.gif", "outputting.gif", "idle.gif", "completed.gif"],
+      "matches": [
+        "*://*.chatgpt.com/*", 
+        "*://chat.deepseek.com/*",
+        "*://gemini.google.com/*"
+      ]
+    }
+  ]
+}
